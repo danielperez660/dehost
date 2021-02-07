@@ -9,7 +9,10 @@
         </style>
     </head>
 
-    <form action="/" method="GET" id="nav">
+    <form action="/" method="POST" id="nav"></form>
+    <form action="/sites" method="POST" id="nav_2"></form>
+    <form action="/settings" method="POST" id="nav_3"></form>
+
     <div class="nav_bar">
         <div class="header">
             DeHost
@@ -18,22 +21,21 @@
 
         <div class="divider"></div>
 
-        <div class="nav_option" type="submit" onclick="document.getElementById('nav').submit();">
+        <div class="nav_option_{{ states[0] }}" onclick="document.getElementById('nav').submit();" >
             <img class="icon" src="../static/browser.svg" alt="Browser Icon" >
-            <p class="text_selected">My Sites</p>
+            <p class="text_{{ states[0] }}">My Sites </p>
         </div>
 
-        <div class="nav_option_deselected" type="submit" onclick="document.getElementById('nav').submit();">
+        <div class="nav_option_{{ states[1] }}" onclick="document.getElementById('nav_2').submit();">
             <img class="icon" src="../static/rocket.svg" alt="New Site Icon" >
-            <p class="text_deselected">Deploy New Site</p>
+            <p class="text_{{ states[1] }}">Deploy New Site</p>
         </div>
 
-        <div class="nav_option_deselected" type="submit" onclick="document.getElementById('nav').submit();">
+        <div class="nav_option_{{ states[2] }}" onclick="document.getElementById('nav_3').submit();">
             <img class="icon" src="../static/cog.svg" alt="Settings Icon" >
-            <p class="text_deselected">Settings</p>
+            <p class="text_{{ states[2] }}">Settings</p>
         </div>
     </div>
-    </form>
 
     <body class="main_body">
         {% block content %}

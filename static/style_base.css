@@ -13,6 +13,7 @@
 
     padding-right: 0.5%;
     padding-left: 0.5%;
+    user-select:none;
 }
 
 .nav_bar .header{
@@ -31,7 +32,7 @@
     color: #AFBDD1;
 }
 
-.nav_bar .nav_option{
+.nav_bar .nav_option_selected{
     position: relative;
     height: 5%;
     left: 0;
@@ -48,12 +49,11 @@
     left: 0;
     top: 5%;
 
-    background: #2B3648;
     border-radius: 4px;
     outline: 0;
 }
 
-.nav_option .text_selected{
+.nav_option_selected .text_selected{
     position: relative;
     padding-left: 25%;
     top: 20%;
@@ -67,7 +67,6 @@
 
     letter-spacing: 0.1px;
     color: #1976D2;
-    user-select:none;
 }
 
 .nav_option_deselected .text_deselected{
@@ -84,7 +83,6 @@
 
     letter-spacing: 0.1px;
     color: #56657F;
-    user-select:none;
 }
 
 .divider{
@@ -93,7 +91,7 @@
     left: 0;
     right: 0;
     bottom: 95px;
-    /* Dark / Divider */
+
     background: #313C4E;
 }
 
@@ -102,4 +100,3 @@
     top: 20%;
     left: 5%;
 }
-
