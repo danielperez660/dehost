@@ -9,7 +9,7 @@
         </style>
     </head>
 
-    <form action="/" method="GET">
+    <form action="/" method="GET" id="nav">
     <div class="nav_bar">
         <div class="header">
             DeHost
@@ -18,7 +18,7 @@
 
         <div class="divider"></div>
 
-        <div class="nav_option">
+        <div class="nav_option" type="submit" onclick="document.getElementById('nav').submit();">
             <img class="icon" src="../static/browser.svg" alt="Browser Icon" >
             <p class="text_selected">My Sites</p>
         </div>
