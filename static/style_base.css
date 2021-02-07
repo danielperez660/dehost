@@ -1,9 +1,9 @@
 
-.main_body{
+.main_body {
     background: #2B3648;
 }
 
-.nav_bar{
+.nav_bar {
     position: absolute;
     width: 15%;
     left: 0;
@@ -13,10 +13,10 @@
 
     padding-right: 0.5%;
     padding-left: 0.5%;
-    user-select:none;
+    user-select: none;
 }
 
-.nav_bar .header{
+.nav_bar .header {
     position: relative;
     height: 4%;
     left: 2%;
@@ -32,7 +32,7 @@
     color: #AFBDD1;
 }
 
-.nav_bar .nav_option_selected{
+.nav_bar .nav_option_selected {
     position: relative;
     height: 5%;
     left: 0;
@@ -43,7 +43,7 @@
     outline: 0;
 }
 
-.nav_bar .nav_option_deselected{
+.nav_bar .nav_option_deselected {
     position: relative;
     height: 5%;
     left: 0;
@@ -53,7 +53,7 @@
     outline: 0;
 }
 
-.nav_option_selected .text_selected{
+.nav_option_selected .text_selected {
     position: relative;
     padding-left: 25%;
     top: 20%;
@@ -68,7 +68,7 @@
     color: #1976D2;
 }
 
-.nav_option_deselected .text_deselected{
+.nav_option_deselected .text_deselected {
     position: relative;
     padding-left: 25%;
     top: 20%;
@@ -83,7 +83,7 @@
     color: #56657F;
 }
 
-.divider{
+.divider {
     position: relative;
     color: #313C4E;
     top: 2%;
@@ -91,20 +91,87 @@
     padding-left: 0;
 }
 
-.icon{
+.nav_option_selected .icon {
     position: absolute;
     top: 20%;
     left: 5%;
 }
 
-.console_screen{
+.nav_option_deselected .icon {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+}
+
+.console_screen {
     position: absolute;
     width: 80%;
-    height: 334px;
-    left: 278px;
-    top: 26.19px;
+    height: 70%;
+    left: 18%;
+    top: 5%;
     background: #212936;
     border: 1px solid #313C4E;
     box-sizing: border-box;
     border-radius: 4px;
+    user-select: none;
+
+}
+
+.console_screen .header {
+    position: absolute;
+    left: 2%;
+    top: 5%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+
+    color: #AFBDD1;
+}
+
+.console_screen .site_entry {
+    position: relative;
+    top: 10%;
+    left: 2%;
+    width: 95%;
+}
+
+.site_entry .title {
+    position: relative;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #8997B1;
+}
+
+.site_entry .url {
+    position: relative;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+
+    color: #56657F;
+}
+
+.site_entry .icon {
+    transform: translateY(-50%);
+}
+
+.site_entry .block {
+    display: inline-block;
+}
+
+.site_entry .text_block {
+    position: relative;
+    display: inline-block;
+    padding-left: 3%;
+    padding-right: 87%;
 }
