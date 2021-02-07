@@ -1,0 +1,13 @@
+
+.main_body{
+    background: #2B3648;
+}
+
+.nav_bar{
+    position: absolute;
+    width: 256px;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    background: #212936;
+}
