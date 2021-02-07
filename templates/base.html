@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>DeHost</title>
-        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style_base.css') }}">
-        <link rel="icon" href="../static/logo.svg">
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-        </style>
-    </head>
+<head>
+    <title>DeHost</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style_base.css') }}">
+    <link rel="icon" href="../static/logo.svg">
 
-    <form action="/sites" method="POST" id="nav"></form>
-    <form action="/new" method="POST" id="nav_2"></form>
-    <form action="/settings" method="POST" id="nav_3"></form>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+    </style>
 
-    <div class="nav_bar">
-        <div class="header">
-            DeHost
-            <img src="../static/logo.svg" alt="Logo">
-            <hr class="divider">
-        </div>
+</head>
 
+<form action="/sites" method="POST" id="nav"></form>
+<form action="/new" method="POST" id="nav_2"></form>
+<form action="/settings" method="POST" id="nav_3"></form>
 
-        <div class="nav_option_{{ g.states[0] }}" onclick="document.getElementById('nav').submit();" >
-            <img class="icon" src="../static/browser.svg" alt="Browser Icon" >
-            <p class="text_{{ g.states[0] }}">My Sites </p>
-        </div>
-
-        <div class="nav_option_{{ g.states[1] }}" onclick="document.getElementById('nav_2').submit();">
-            <img class="icon" src="../static/rocket.svg" alt="New Site Icon" >
-            <p class="text_{{ g.states[1] }}">Deploy New Site</p>
-        </div>
-
-        <div class="nav_option_{{ g.states[2] }}" onclick="document.getElementById('nav_3').submit();" style="bottom: 0;">
-            <img class="icon" src="../static/cog.svg" alt="Settings Icon" >
-            <p class="text_{{ g.states[2] }}">Settings</p>
-        </div>
+<div class="nav_bar">
+    <div class="header">
+        DeHost
+        <img src="../static/logo.svg" alt="Logo">
+        <hr class="divider">
     </div>
 
-    <body class="main_body">
-    <div class="console_screen">
-        {% block content %}
-        {% endblock %}
+
+    <div class="nav_option_{{ g.states[0] }}" onclick="document.getElementById('nav').submit();">
+        <img class="icon" src="../static/browser.svg" alt="Browser Icon">
+        <p class="text_{{ g.states[0] }}">My Sites </p>
     </div>
-    </body>
+
+    <div class="nav_option_{{ g.states[1] }}" onclick="document.getElementById('nav_2').submit();">
+        <img class="icon" src="../static/rocket.svg" alt="New Site Icon">
+        <p class="text_{{ g.states[1] }}">Deploy New Site</p>
+    </div>
+
+    <div class="nav_option_{{ g.states[2] }}" onclick="document.getElementById('nav_3').submit();" style="bottom: 0;">
+        <img class="icon" src="../static/cog.svg" alt="Settings Icon">
+        <p class="text_{{ g.states[2] }}">Settings</p>
+    </div>
+</div>
+
+<body class="main_body">
+<div class="console_screen">
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
 </html>

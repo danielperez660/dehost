@@ -121,6 +121,8 @@
     position: absolute;
     left: 2%;
     top: 5%;
+    padding-bottom: 5%;
+
 
     font-family: Roboto;
     font-style: normal;
@@ -133,7 +135,7 @@
 
 .console_screen .site_entry {
     position: relative;
-    top: 10%;
+    top: 15%;
     left: 2%;
     width: 95%;
 }
@@ -147,6 +149,15 @@
     font-size: 14px;
     line-height: 21px;
     color: #8997B1;
+}
+
+.modal_custom {
+    background-color: #212936;
+    color: #AFBDD1;
+}
+.modal_custom:hover{
+    background-color: #212936;
+    color: #AFBDD1;
 }
 
 .site_entry .url {
