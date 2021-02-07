@@ -17,9 +17,9 @@
         <div class="header">
             DeHost
             <img src="../static/logo.svg" alt="Logo">
+            <hr class="divider">
         </div>
 
-        <div class="divider"></div>
 
         <div class="nav_option_{{ states[0] }}" onclick="document.getElementById('nav').submit();" >
             <img class="icon" src="../static/browser.svg" alt="Browser Icon" >
@@ -31,7 +31,7 @@
             <p class="text_{{ states[1] }}">Deploy New Site</p>
         </div>
 
-        <div class="nav_option_{{ states[2] }}" onclick="document.getElementById('nav_3').submit();">
+        <div class="nav_option_{{ states[2] }}" onclick="document.getElementById('nav_3').submit();" style="bottom: 0;">
             <img class="icon" src="../static/cog.svg" alt="Settings Icon" >
             <p class="text_{{ states[2] }}">Settings</p>
         </div>

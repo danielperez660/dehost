@@ -65,7 +65,6 @@
     font-size: 14px;
     line-height: 21px;
 
-    letter-spacing: 0.1px;
     color: #1976D2;
 }
 
@@ -81,18 +80,15 @@
     font-size: 14px;
     line-height: 21px;
 
-    letter-spacing: 0.1px;
     color: #56657F;
 }
 
 .divider{
     position: relative;
-    height: 1px;
-    left: 0;
-    right: 0;
-    bottom: 95px;
-
-    background: #313C4E;
+    color: #313C4E;
+    top: 2%;
+    bottom: 2%;
+    padding-left: 0;
 }
 
 .icon{
