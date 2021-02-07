@@ -5,9 +5,73 @@
 
 .nav_bar{
     position: absolute;
-    width: 256px;
-    left: 0px;
-    top: 0px;
-    bottom: 0px;
+    width: 15%;
+    left: 0;
+    top: 0;
+    bottom: 0;
     background: #212936;
+
+    padding-right: 0.5%;
+    padding-left: 0.5%;
+}
+
+.nav_bar .header{
+    position: relative;
+    height: 4%;
+    left: 2%;
+    right: 2%;
+    top: 2%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+
+    color: #AFBDD1;
+}
+
+.nav_bar .nav_option{
+    position: relative;
+    height: 5%;
+    left: 0;
+    top: 5%;
+
+    background: #2B3648;
+    border-radius: 4px;
+    outline: 0;
+
+}
+
+.nav_option .text_selected{
+    position: relative;
+    left: 25%;
+    right: 25%;
+    top: 20%;
+
+    /* Subtitle 2 - med 14 (21px, 0.1px) */
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+
+    letter-spacing: 0.1px;
+    color: #1976D2;
+}
+
+.divider{
+    position: relative;
+    height: 1px;
+    left: 0;
+    right: 0;
+    bottom: 95px;
+    /* Dark / Divider */
+    background: #313C4E;
+}
+
+.icon{
+    position: absolute;
+    top: 20%;
+    left: 5%;
 }

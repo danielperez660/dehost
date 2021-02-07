@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title></title>
+        <title>DeHost</title>
         <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style_base.css') }}">
+        <link rel="icon" href="../static/logo.svg">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+        </style>
     </head>
 
+    <form action="/" method="GET">
     <div class="nav_bar">
+        <div class="header">
+            DeHost
+            <img src="../static/logo.svg" alt="Logo">
+        </div>
 
+        <div class="divider"></div>
+
+        <div class="nav_option">
+            <img class="icon" src="../static/browser.svg" alt="Browser Icon" >
+            <p class="text_selected">My Sites</p>
+        </div>
     </div>
+    </form>
 
     <body class="main_body">
         {% block content %}
