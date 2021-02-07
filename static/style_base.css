@@ -96,3 +96,15 @@
     top: 20%;
     left: 5%;
 }
+
+.console_screen{
+    position: absolute;
+    width: 80%;
+    height: 334px;
+    left: 278px;
+    top: 26.19px;
+    background: #212936;
+    border: 1px solid #313C4E;
+    box-sizing: border-box;
+    border-radius: 4px;
+}

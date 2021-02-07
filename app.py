@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, g
 
 app = Flask(__name__)
 
@@ -8,8 +8,8 @@ def index():
     if request.method == 'POST':
         return redirect(url_for('index'))
 
-    states = ("selected", "deselected", "deselected")
-    return render_template("base.html", states=states)
+    g.states = ("selected", "deselected", "deselected")
+    return render_template("main_console.html")
 
 
 @app.route('/sites', methods=["POST", "GET"])
@@ -17,8 +17,8 @@ def sites():
     if request.method == 'POST':
         return redirect(url_for('sites'))
 
-    states = ("deselected", "selected", "deselected")
-    return render_template("base.html", states=states)
+    g.states = ("deselected", "selected", "deselected")
+    return render_template("main_console.html", )
 
 
 @app.route('/settings', methods=["POST", "GET"])
@@ -26,8 +26,8 @@ def settings():
     if request.method == 'POST':
         return redirect(url_for('settings'))
 
-    states = ("deselected", "deselected", "selected")
-    return render_template("base.html", states=states)
+    g.states = ("deselected", "deselected", "selected")
+    return render_template("main_console.html")
 
 
 if __name__ == '__main__':

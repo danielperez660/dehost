@@ -21,24 +21,26 @@
         </div>
 
 
-        <div class="nav_option_{{ states[0] }}" onclick="document.getElementById('nav').submit();" >
+        <div class="nav_option_{{ g.states[0] }}" onclick="document.getElementById('nav').submit();" >
             <img class="icon" src="../static/browser.svg" alt="Browser Icon" >
-            <p class="text_{{ states[0] }}">My Sites </p>
+            <p class="text_{{ g.states[0] }}">My Sites </p>
         </div>
 
-        <div class="nav_option_{{ states[1] }}" onclick="document.getElementById('nav_2').submit();">
+        <div class="nav_option_{{ g.states[1] }}" onclick="document.getElementById('nav_2').submit();">
             <img class="icon" src="../static/rocket.svg" alt="New Site Icon" >
-            <p class="text_{{ states[1] }}">Deploy New Site</p>
+            <p class="text_{{ g.states[1] }}">Deploy New Site</p>
         </div>
 
-        <div class="nav_option_{{ states[2] }}" onclick="document.getElementById('nav_3').submit();" style="bottom: 0;">
+        <div class="nav_option_{{ g.states[2] }}" onclick="document.getElementById('nav_3').submit();" style="bottom: 0;">
             <img class="icon" src="../static/cog.svg" alt="Settings Icon" >
-            <p class="text_{{ states[2] }}">Settings</p>
+            <p class="text_{{ g.states[2] }}">Settings</p>
         </div>
     </div>
 
     <body class="main_body">
+    <div class="console_screen">
         {% block content %}
         {% endblock %}
+    </div>
     </body>
 </html>
