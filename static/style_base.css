@@ -40,7 +40,17 @@
     background: #2B3648;
     border-radius: 4px;
     outline: 0;
+}
 
+.nav_bar .nav_option_deselected{
+    position: relative;
+    height: 5%;
+    left: 0;
+    top: 5%;
+
+    background: #2B3648;
+    border-radius: 4px;
+    outline: 0;
 }
 
 .nav_option .text_selected{
@@ -57,6 +67,23 @@
 
     letter-spacing: 0.1px;
     color: #1976D2;
+    user-select:none;
+}
+
+.nav_option_deselected .text_deselected{
+    position: relative;
+    padding-left: 25%;
+    top: 20%;
+
+    /* Subtitle 2 - med 14 (21px, 0.1px) */
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+
+    letter-spacing: 0.1px;
+    color: #56657F;
     user-select:none;
 }
 
