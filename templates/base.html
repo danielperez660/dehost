@@ -22,19 +22,20 @@
         <hr class="divider">
     </div>
 
+    {#Menu options#}
 
     <div class="nav_option_{{ g.states[0] }}" onclick="document.getElementById('nav').submit();">
-        <img class="icon" src="../static/browser.svg" alt="Browser Icon">
+        <img class="icon" src="../static/browser{{g.states[0]}}.svg" alt="Browser Icon">
         <p class="text_{{ g.states[0] }}">My Sites </p>
     </div>
 
     <div class="nav_option_{{ g.states[1] }}" onclick="document.getElementById('nav_2').submit();">
-        <img class="icon" src="../static/rocket.svg" alt="New Site Icon">
+        <img class="icon" src="../static/rocket{{g.states[1]}}.svg" alt="New Site Icon">
         <p class="text_{{ g.states[1] }}">Deploy New Site</p>
     </div>
 
     <div class="nav_option_{{ g.states[2] }}" onclick="document.getElementById('nav_3').submit();" style="bottom: 0;">
-        <img class="icon" src="../static/cog.svg" alt="Settings Icon">
+        <img class="icon" src="../static/cog{{g.states[2]}}.svg" alt="Settings Icon">
         <p class="text_{{ g.states[2] }}">Settings</p>
     </div>
 </div>
