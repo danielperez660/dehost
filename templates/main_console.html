@@ -10,7 +10,7 @@
 
     <div class="site_entry">
         <div class="block">
-            <img class="icon" src="../static/rocket.svg">
+            <img class="icon" src="../static/rocketdeselected.svg">
         </div>
 
         <div class="text_block">
@@ -19,7 +19,18 @@
         </div>
 
         <div class="block">
-            <img class="icon" src="../static/burger.svg">
+            <img class="icon" src="../static/burger.svg" onclick="document.getElementById('id01').style.display='block'">
+        <!-- The Modal -->
+        <div id="id01" class="w3-modal">
+          <div class="w3-modal-content">
+            <div class="w3-container">
+              <span onclick="document.getElementById('id01').style.display='none'"
+              class="w3-button w3-display-topright">&times;</span>
+              <p>Some text in the Modal..</p>
+              <p>Some text in the Modal..</p>
+            </div>
+          </div>
+        </div>
         </div>
     </div>
 
