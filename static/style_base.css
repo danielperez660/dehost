@@ -151,16 +151,6 @@
     color: #8997B1;
 }
 
-.modal_custom {
-    background-color: #212936;
-    color: #AFBDD1;
-}
-
-.modal_custom:hover {
-    background-color: #212936;
-    color: #AFBDD1;
-}
-
 .site_entry .url {
     position: relative;
 
@@ -187,3 +177,45 @@
     padding-left: 3%;
     padding-right: 87%;
 }
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #121923;
+    min-width: 5000px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content-show {
+    position: absolute;
+    background: #121923;
+    min-width: 5000px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content-show a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/*.dropdown a:hover {background-color: #ddd;}*/
+/*.dropdown-content-show a:hover {background-color: #ddd;}*/

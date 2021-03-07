@@ -18,9 +18,42 @@
             <p class="url">www.test.com</p>
         </div>
 
+
         <div class="block">
-            <img class="icon" src="../static/burger.svg">
+            <div class="dropdown">
+                <img class="icon" onclick="myFunction()" src="../static/burger.svg">
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#home">Change Domain</a>
+                    <a href="#about">Delete</a>
+                </div>
+            </div>
         </div>
+
+        <script>
+            function myFunction() {
+                let dropdown = document.getElementById("myDropdown");
+                try {
+                    if (dropdown.classList.contains('dropdown-content')) {
+                        dropdown.classList.toggle('dropdown-content');
+                        dropdown.classList.add('dropdown-content-show');
+                    }
+                }catch (error){}
+            }
+
+            window.onclick = function (event) {
+                if (!event.target.matches('.icon')) {
+                    let dropdown = document.getElementById("myDropdown");
+
+                    if(dropdown.classList.contains('dropdown-content-show')){
+                        dropdown.classList.toggle('dropdown-content');
+                        dropdown.classList.toggle('dropdown-content-show');
+                    }
+                }
+            }
+
+        </script>
+
+
     </div>
 
 
