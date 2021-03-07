@@ -1,16 +1,45 @@
 {% extends "base.html" %}
-<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style_base.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style_base.css') }}">
 
 
 {% block content %}
-     <div class="header">
-        New Sites
-     </div>
+    <div id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
+        <div class="header">
+            New Sites
+        </div>
 
-    <div>
-        <div class="central_icon">
-            <img src="../static/cross.svg" alt="Add" class="cross">
-            <p> Drag & Drop Your Site's Folder Here </p>
+        <div>
+            <div class="central_icon">
+                <img src="../static/cross.svg" alt="Add" class="cross">
+                <p> Drag & Drop Your Site's Folder Here </p>
+            </div>
         </div>
     </div>
+
+    {#    https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/File_drag_and_drop#}
+    {#    Imma be real, this is 100% not my work and I have stolen it from the above site   #}
+    <script>
+        function dropHandler(e) {
+            e.preventDefault();
+            if (e.dataTransfer.items) {
+                // Use DataTransferItemList interface to access the file(s)
+                for (let i = 0; i < e.dataTransfer.items.length; i++) {
+                    // If dropped items aren't files, reject them
+                    if (e.dataTransfer.items[i].kind === 'file') {
+                        let file = e.dataTransfer.items[i].getAsFile();
+                        console.log('... file[' + i + '].name = ' + file.name);
+                    }
+                }
+            } else {
+                // Use DataTransfer interface to access the file(s)
+                for (let i = 0; i < e.dataTransfer.files.length; i++) {
+                    console.log('... file[' + i + '].name = ' + e.dataTransfer.files[i].name);
+                }
+            }
+        }
+
+        function dragOverHandler(e) {
+
+        }
+    </script>
 {% endblock %}
