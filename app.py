@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for, g
+from database_manager import DBManager
 
 app = Flask(__name__)
+DB = DBManager()
 
 
 @app.route('/', methods=["POST", "GET"])

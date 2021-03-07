@@ -217,5 +217,23 @@
     display: block;
 }
 
+.central_icon {
+    position: absolute;
+    right: 45.52%;
+    top: 35.03%;
+}
+
+.central_icon .cross {
+    left: 30.52%;
+    position: relative;
+}
+
+.central_icon p {
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 14px;
+    color: #4F5E76;
+}
+
 /*.dropdown a:hover {background-color: #ddd;}*/
 /*.dropdown-content-show a:hover {background-color: #ddd;}*/
