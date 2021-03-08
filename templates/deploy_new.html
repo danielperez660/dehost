@@ -16,10 +16,12 @@
         </div>
     </div>
 
+
     {#    https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/File_drag_and_drop#}
     {#    Imma be real, this is 100% not my work and I have stolen it from the above site   #}
-
-    <script type="text/javascript">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+    <script>
         function dragOverHandler(ev) {
             console.log('File(s) in drop zone');
 
@@ -29,25 +31,32 @@
 
         function dropHandler(ev) {
             console.log('File(s) dropped');
-
-            // Prevent default behavior (Prevent file from being opened)
             ev.preventDefault();
+            let formData = new FormData();
+
 
             if (ev.dataTransfer.items) {
                 // Use DataTransferItemList interface to access the file(s)
-                for (var i = 0; i < ev.dataTransfer.items.length; i++) {
-                    // If dropped items aren't files, reject them
+                for (let i = 0; i < ev.dataTransfer.items.length; i++) {
                     if (ev.dataTransfer.items[i].kind === 'file') {
-                        var file = ev.dataTransfer.items[i].getAsFile();
+                        let file = ev.dataTransfer.items[i].getAsFile();
+                        formData.append("file_" + i, file);
                         console.log('... file[' + i + '].name = ' + file.name);
                     }
                 }
             } else {
                 // Use DataTransfer interface to access the file(s)
-                for (var i = 0; i < ev.dataTransfer.files.length; i++) {
+                for (let i = 0; i < ev.dataTransfer.files.length; i++) {
                     console.log('... file[' + i + '].name = ' + ev.dataTransfer.files[i].name);
+                    let file = ev.dataTransfer.files[i];
+                    formData.append("file_" + i, file);
                 }
             }
+            let d = new Date();
+            d = d.getTime()
+            let hashed = CryptoJS.MD5(d).toString();
+            fetch('/new/' + hashed, {method: "POST", body: formData});
+
         }
     </script>
 {% endblock %}

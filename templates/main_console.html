@@ -37,14 +37,15 @@
                         dropdown.classList.toggle('dropdown-content');
                         dropdown.classList.add('dropdown-content-show');
                     }
-                }catch (error){}
+                } catch (error) {
+                }
             }
 
             window.onclick = function (event) {
                 if (!event.target.matches('.icon')) {
                     let dropdown = document.getElementById("myDropdown");
 
-                    if(dropdown.classList.contains('dropdown-content-show')){
+                    if (dropdown.classList.contains('dropdown-content-show')) {
                         dropdown.classList.toggle('dropdown-content');
                         dropdown.classList.toggle('dropdown-content-show');
                     }
