@@ -1,0 +1,10 @@
+{% extends "deploy_new.html" %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style_base.css') }}">
+
+{% block drop %}
+    {{ super() }}
+
+    <p>TEST</p>
+
+
+{% endblock %}

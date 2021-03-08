@@ -3,17 +3,9 @@
 
 
 {% block content %}
-    <div id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
-        <div class="header">
-            New Sites
-        </div>
-
-        <div>
-            <div class="central_icon">
-                <img src="../static/cross.svg" alt="Add" class="cross">
-                <p> Drag & Drop Your Site's Folder Here </p>
-            </div>
-        </div>
+    <div class="console_screen" id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
+        {% block drop %}
+        {% endblock %}
     </div>
 
 
@@ -30,7 +22,6 @@
         }
 
         function dropHandler(ev) {
-            console.log('File(s) dropped');
             ev.preventDefault();
             let formData = new FormData();
 
@@ -40,23 +31,24 @@
                 for (let i = 0; i < ev.dataTransfer.items.length; i++) {
                     if (ev.dataTransfer.items[i].kind === 'file') {
                         let file = ev.dataTransfer.items[i].getAsFile();
-                        formData.append("file_" + i, file);
-                        console.log('... file[' + i + '].name = ' + file.name);
+                        formData.append(ev.dataTransfer.files[i].name, file);
                     }
                 }
             } else {
                 // Use DataTransfer interface to access the file(s)
                 for (let i = 0; i < ev.dataTransfer.files.length; i++) {
-                    console.log('... file[' + i + '].name = ' + ev.dataTransfer.files[i].name);
                     let file = ev.dataTransfer.files[i];
-                    formData.append("file_" + i, file);
+                    formData.append(ev.dataTransfer.files[i].name, file);
                 }
             }
+
             let d = new Date();
             d = d.getTime()
             let hashed = CryptoJS.MD5(d).toString();
-            fetch('/new/' + hashed, {method: "POST", body: formData});
-
+            fetch('/new/' + hashed, {method: "POST", body: formData}).then(data => {
+                console.log(data)
+                }
+            );
         }
     </script>
 {% endblock %}

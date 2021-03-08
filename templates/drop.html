@@ -1,0 +1,18 @@
+{% extends "deploy_new.html" %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style_base.css') }}">
+
+{% block drop %}
+    {{ super() }}
+
+    <div class="header">
+        New Sites
+    </div>
+
+    <div>
+        <div class="central_icon">
+            <img src="../static/cross.svg" alt="Add" class="cross">
+            <p> Drag & Drop Your Site's Folder Here </p>
+        </div>
+    </div>
+
+{% endblock %}

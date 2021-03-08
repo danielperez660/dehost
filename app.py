@@ -21,23 +21,28 @@ def sites():
         return redirect(url_for('sites'))
 
     g.states = ("deselected", "selected", "deselected")
-    return render_template("deploy_new.html", )
+    return render_template("drop.html")
 
 
 @app.route('/new/<hashed>', methods=["POST"])
 def file_manager(hashed):
+    g.states = ("deselected", "selected", "deselected")
     files = []
+    status_code = Response(status=400)
 
     try:
         for i in request.files:
             files.append(i)
     except Exception:
-        status_code = Response(status=400)
+        print("No Files")
         return status_code
 
+    for i in files:
+        if not allowed_files(i):
+            print("Invalid Format")
+            return status_code
 
-    status_code = Response(status=201)
-    return status_code
+    return Response(status=201)
 
 
 @app.route('/settings', methods=["POST", "GET"])
@@ -49,5 +54,14 @@ def settings():
     return render_template("settings.html")
 
 
+def allowed_files(file):
+    # Add the checking of magic numbers (file signature)
+    extensions = ["html", "css", "png", "svg", "jpg", "jpeg"]
+    ext = file.split(".")[-1].lower()
+    if ext not in extensions:
+        return False
+    return True
+
+
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
