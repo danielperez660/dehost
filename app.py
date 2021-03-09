@@ -42,7 +42,13 @@ def file_manager(hashed):
             print("Invalid Format")
             return status_code
 
-    return Response(status=201)
+    return redirect(url_for('confirm'))
+
+
+@app.route("/confirm", methods=["GET"])
+def confirm():
+    g.states = ("deselected", "selected", "deselected")
+    return render_template("confirm.html")
 
 
 @app.route('/settings', methods=["POST", "GET"])

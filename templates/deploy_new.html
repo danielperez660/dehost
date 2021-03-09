@@ -46,7 +46,9 @@
             d = d.getTime()
             let hashed = CryptoJS.MD5(d).toString();
             fetch('/new/' + hashed, {method: "POST", body: formData}).then(data => {
-                console.log(data)
+                    if (data.redirected) {
+                        window.location.href = data.url;
+                    }
                 }
             );
         }
