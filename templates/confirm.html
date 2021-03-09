@@ -1,10 +1,23 @@
-{% extends "deploy_new.html" %}
+{% extends "base.html" %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style_base.css') }}">
 
-{% block drop %}
-    {{ super() }}
 
-    <p>TEST</p>
-
-
+{% block content %}
+    <div class="console_screen">
+        <div class="option">
+            <p>Site Name</p>
+            <input type="text">
+        </div>
+        <br>
+        <div class="option">
+            <p>Hosting Chain</p>
+            <select>
+                <option value="Sia">Sia</option>
+                <option value="IPFS">IPFS</option>
+            </select>
+        </div>
+        <div class="option">
+            <button>Confirm</button>
+        </div>
+    </div>
 {% endblock %}
