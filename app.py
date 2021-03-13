@@ -45,10 +45,15 @@ def file_manager(hashed):
     return redirect(url_for('confirm'))
 
 
-@app.route("/confirm", methods=["GET"])
+@app.route("/confirm", methods=["GET", "POST"])
 def confirm():
     g.states = ("deselected", "selected", "deselected")
-    return render_template("confirm.html")
+    if request.method == "GET":
+        return render_template("confirm.html")
+    elif request.method == "POST":
+        name = request.form['name']
+        chain = request.form['chain']
+        return redirect(url_for("index"))
 
 
 @app.route('/settings', methods=["POST", "GET"])

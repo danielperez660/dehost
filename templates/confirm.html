@@ -3,21 +3,23 @@
 
 
 {% block content %}
+    <form action="/confirm" method="POST">
     <div class="console_screen">
         <div class="option">
             <p>Site Name</p>
-            <input type="text">
+            <input type="text" name="name">
         </div>
         <br>
         <div class="option">
             <p>Hosting Chain</p>
-            <select>
+            <select name="chain">
                 <option value="Sia">Sia</option>
                 <option value="IPFS">IPFS</option>
             </select>
         </div>
         <div class="option">
-            <button>Confirm</button>
+            <button type="submit">Confirm</button>
         </div>
     </div>
+    </form>
 {% endblock %}
