@@ -62,7 +62,7 @@ def settings():
 
 def allowed_files(file):
     # Add the checking of magic numbers (file signature)
-    extensions = ["html", "css", "png", "svg", "jpg", "jpeg"]
+    extensions = ["html", "css", "png", "svg", "jpg", "jpeg", "js"]
     ext = file.split(".")[-1].lower()
     if ext not in extensions:
         return False

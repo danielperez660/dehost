@@ -252,53 +252,41 @@
 }
 
 .option {
-
+    display: block;
     position: relative;
-    left: 1%;
+    left: 2%;
     top: 6.71%;
 
     font-family: Roboto;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 30px;
-
-    /* or 250% */
-    display: flex;
-    align-items: center;
+    padding-top: 2%;
     letter-spacing: 0.15px;
 
-    color: #FFFFFF;
+    color: #8997B1;
 }
 
 .option input {
-    position: relative;
-    left: 3.5%;
-    right: 80%;
-    top: 30%;
-    bottom: 60%;
+    border: 0;
 
     background: #2B3648;
     border-radius: 4px;
     color: #FFFFFF;
+    outline: 0;
+    text-align: left;
+    padding: 0.5%;
 }
 
 .option select {
-    position: relative;
-    left: 3.38%;
-    right: 80.43%;
-    top: 29.91%;
-    bottom: 62.05%;
-
-    background: #2B3648;
     border-radius: 4px;
     color: #FFFFFF;
+    border-color: #8997B1;
+    background: #2B3648;
+
 }
 
 .option button {
     font-family: Roboto;
     color: #FFFFFF;
-    border: none;
+    border: 0;
 
     padding: 0.5% 1%;
     background: #1976D2;
