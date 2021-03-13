@@ -9,54 +9,59 @@
             Deployed Sites
         </div>
 
-        <div class="site_entry">
-            <div class="block">
-                <img class="icon" src="../static/rocketdeselected.svg">
-            </div>
+        {% for site in sites_list %}
 
-            <div class="text_block">
-                <p class="title">Test</p>
-                <p class="url">www.test.com</p>
-            </div>
+            <div class="site_entry">
+                <div class="block">
+                    <img class="icon" src="../static/rocketdeselected.svg">
+                </div>
+
+                <div class="text_block">
+                    <p class="title">{{ site[1] }}</p>
+                    <p class="url">{{ site[4] }}</p>
+                    <p class="url">{{ site[3] }}</p>
+                </div>
 
 
-            <div class="block">
-                <div class="dropdown">
-                    <img class="icon" onclick="myFunction()" src="../static/burger.svg">
-                    <div id="myDropdown" class="dropdown-content">
-                        <a href="#home">Change Domain</a>
-                        <a href="#about">Delete</a>
+                <div class="block">
+                    <div class="dropdown">
+                        <img class="icon" onclick="myFunction()" src="../static/burger.svg">
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="#home">Change Domain</a>
+                            <a href="#about">Delete</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <script>
-                function myFunction() {
+        {% endfor %}
+
+        <script>
+            function myFunction() {
+                let dropdown = document.getElementById("myDropdown");
+                try {
+                    if (dropdown.classList.contains('dropdown-content')) {
+                        dropdown.classList.toggle('dropdown-content');
+                        dropdown.classList.add('dropdown-content-show');
+                    }
+                } catch (error) {
+                }
+            }
+
+            window.onclick = function (event) {
+                if (!event.target.matches('.icon')) {
                     let dropdown = document.getElementById("myDropdown");
-                    try {
-                        if (dropdown.classList.contains('dropdown-content')) {
-                            dropdown.classList.toggle('dropdown-content');
-                            dropdown.classList.add('dropdown-content-show');
-                        }
-                    } catch (error) {
+
+                    if (dropdown.classList.contains('dropdown-content-show')) {
+                        dropdown.classList.toggle('dropdown-content');
+                        dropdown.classList.toggle('dropdown-content-show');
                     }
                 }
+            }
 
-                window.onclick = function (event) {
-                    if (!event.target.matches('.icon')) {
-                        let dropdown = document.getElementById("myDropdown");
-
-                        if (dropdown.classList.contains('dropdown-content-show')) {
-                            dropdown.classList.toggle('dropdown-content');
-                            dropdown.classList.toggle('dropdown-content-show');
-                        }
-                    }
-                }
-
-            </script>
+        </script>
 
 
-        </div>
     </div>
 
 

@@ -169,6 +169,7 @@
 
 .site_entry .block {
     display: inline-block;
+    position: absolute;
 }
 
 .site_entry .text_block {
