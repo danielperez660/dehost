@@ -1,9 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for, g, Response, session
 from database_manager import DBManager
+from skynet_manager import SkyManager
 
 app = Flask(__name__)
 app.secret_key = "d16683620814b0fc868c47c6ff3195b5"
 DB = DBManager()
+sia = SkyManager()
 
 
 @app.route('/', methods=["POST", "GET"])
@@ -87,6 +89,7 @@ def uploader(chain):
 
     if chain == "Sia":
         print("Uploading to Sia")
+        # sia.submit_file(file="this is a file")
     elif chain == "IPFS":
         print("Uploading to IPFS")
 
