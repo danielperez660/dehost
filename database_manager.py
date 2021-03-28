@@ -23,13 +23,15 @@ class DBManager:
             NAME TEXT NOT NULL,
             OWNER TEXT NOT NULL,
             CHAIN TEXT NOT NULL,
-            LINK TEXT NOT NULL);
+            LINK TEXT NOT NULL,
+            CHAIN_LINK TEXT NOT NULL);
             """)
 
         print("Table Created")
 
-    def add_website(self, name, owner, chain, link):
-        self.cursor.execute("INSERT INTO WEBSITES VALUES (?, ?, ?, ?, ?)", (self.counter, name, owner, chain, link))
+    def add_website(self, name, owner, chain, link, chain_link):
+        self.cursor.execute("INSERT INTO WEBSITES VALUES (?, ?, ?, ?, ?, ?)",
+                            (self.counter, name, owner, chain, link, chain_link))
         self.counter += 1
         print("Added Successfully")
         self.db.commit()
@@ -42,3 +44,7 @@ class DBManager:
         self.cursor.execute("select * from WEBSITES")
         total = len(self.cursor.fetchall())
         return total + 1
+
+    def find_website_name(self, name):
+        self.cursor.execute("SELECT * FROM WEBSITES WHERE NAME = ?", (name,))
+        return self.cursor.fetchall()
